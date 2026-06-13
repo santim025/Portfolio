@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>engly-app — Caso de estudio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="../animations.css" />
+  <link rel="stylesheet" href="../portfolio.css" />
+</head>
+<body class="grain" data-cursor-glow>
+  <div class="scroll-progress"></div>
+  <header class="topbar">
+    <span class="brand">santimorales<span style="color:var(--accent)">.dev</span></span>
+    <nav class="nav">
+      <a href="home.html" class="underline-grow">Inicio</a>
+      <a href="projects.html" class="active">Proyectos</a>
+      <a href="contact.html" class="underline-grow">Contacto</a>
+    </nav>
+  </header>
+
+  <main class="container stack">
+    <p class="muted"><a class="arrow-link" href="projects.html"><span class="arrow" style="transform:rotate(180deg)">→</span> Proyectos</a></p>
+
+    <section class="aurora">
+      <div class="row between reveal">
+        <div>
+          <span class="badge badge-accent">App móvil</span>
+          <h1 style="margin-top:var(--space-2)">engly-app</h1>
+        </div>
+        <a class="btn arrow-link" href="#" data-magnetic>Ver código <span class="arrow">→</span></a>
+      </div>
+      <p class="lead reveal" data-d="1">Aplicación móvil para aprender inglés con lecciones cortas, quizzes y seguimiento de progreso que funciona sin conexión.</p>
+    </section>
+
+    <div class="project-thumb zoom-media blur-in" data-tilt style="height:300px; font-size:1rem">engly-app · screenshot</div>
+
+    <section class="grid grid-2" style="margin-top:var(--space-5)">
+      <div class="card reveal-on-scroll" data-d="1">
+        <h3>El reto</h3>
+        <p>Permitir practicar inglés en cualquier momento, incluso sin internet, manteniendo el progreso sincronizado y una experiencia fluida en dispositivos de gama baja.</p>
+        <h3 style="margin-top:var(--space-4)">La solución</h3>
+        <p>Una app Expo + React Native con almacenamiento local en SQLite para el progreso offline, tipado estricto con TypeScript y una arquitectura por features para escalar el contenido.</p>
+      </div>
+      <div class="card stack reveal-on-scroll" data-d="2">
+        <div>
+          <h3>Stack</h3>
+          <div class="tags">
+            <span class="tag">Expo</span><span class="tag">React Native</span>
+            <span class="tag">TypeScript</span><span class="tag">SQLite</span>
+          </div>
+        </div>
+        <div>
+          <h3>Características</h3>
+          <ul class="feature-list">
+            <li>Lecciones interactivas con quizzes</li>
+            <li>Progreso y rachas offline</li>
+            <li>Sincronización al recuperar conexión</li>
+            <li>Modo oscuro y accesibilidad</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Rol</h3>
+          <p style="margin:0">Diseño, arquitectura y desarrollo completo.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="row" style="margin-top:var(--space-5)">
+      <a class="btn btn-ghost" href="projects.html">Todos los proyectos</a>
+      <a class="btn arrow-link" href="contact.html" data-magnetic>Trabajemos juntos <span class="arrow">→</span></a>
+    </div>
+  </main>
+
+  <footer class="footer">© 2026 Santiago Morales · santimorales2000@gmail.com</footer>
+  <script defer src="../scroll.js"></script>
+</body>
+</html>

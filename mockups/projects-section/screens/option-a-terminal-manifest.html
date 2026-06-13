@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Opción A — Terminal Manifest</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      .manifest {
+        display: grid;
+        gap: 24px;
+      }
+      @media (min-width: 960px) {
+        .manifest {
+          grid-template-columns: 1.15fr 0.85fr;
+          align-items: start;
+        }
+      }
+      .hero-panel {
+        border: 1px solid var(--primary-800);
+        border-radius: var(--radius);
+        background: linear-gradient(160deg, rgba(20, 184, 166, 0.1), var(--surface-subtle));
+        overflow: hidden;
+        box-shadow: var(--shadow-glow);
+      }
+      .hero-panel__bar {
+        display: flex;
+        gap: 6px;
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--border-subtle);
+        background: var(--surface-muted);
+      }
+      .dot { width: 10px; height: 10px; border-radius: 50%; }
+      .dot--r { background: #ef4444; }
+      .dot--y { background: #f59e0b; }
+      .dot--g { background: #22c55e; }
+      .hero-panel__title {
+        margin-left: auto;
+        font-family: var(--font-display);
+        font-size: 11px;
+        color: var(--text-muted);
+      }
+      .hero-panel__body {
+        padding: 24px;
+        font-family: var(--font-display);
+        font-size: 13px;
+      }
+      .hero-panel__body .prompt { color: var(--primary-400); }
+      .hero-panel__body .ok { color: #86efac; }
+      .hero-panel__body .dim { color: var(--text-muted); }
+      .hero-panel__body h3 {
+        font-size: 1.75rem;
+        margin: 16px 0 8px;
+        color: var(--text-primary);
+      }
+      .hero-panel__body p {
+        color: var(--text-secondary);
+        font-family: var(--font-body);
+        font-size: 14px;
+        line-height: 1.7;
+        margin: 0 0 20px;
+      }
+      .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+      .hero-stats div {
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid var(--border-subtle);
+        background: var(--surface-muted);
+      }
+      .hero-stats strong {
+        display: block;
+        font-size: 1.1rem;
+        color: var(--primary-400);
+      }
+      .hero-stats span {
+        font-size: 10px;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+      .service-list {
+        border: 1px solid var(--border-default);
+        border-radius: var(--radius);
+        background: var(--surface-subtle);
+        overflow: hidden;
+      }
+      .service-list__head {
+        padding: 12px 16px;
+        font-family: var(--font-display);
+        font-size: 11px;
+        color: var(--text-muted);
+        border-bottom: 1px solid var(--border-subtle);
+        background: var(--surface-muted);
+      }
+      .service-row {
+        display: grid;
+        grid-template-columns: 20px 1fr auto;
+        gap: 12px;
+        align-items: start;
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--border-subtle);
+        transition: background 0.2s;
+        cursor: default;
+      }
+      .service-row:last-child { border-bottom: none; }
+      .service-row:hover {
+        background: rgba(20, 184, 166, 0.04);
+      }
+      .service-row .status {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        margin-top: 6px;
+      }
+      .status--live { background: #22c55e; box-shadow: 0 0 8px rgba(34, 197, 94, 0.5); }
+      .status--private { background: var(--text-muted); }
+      .service-row h4 {
+        font-family: var(--font-display);
+        font-size: 14px;
+        margin: 0 0 4px;
+      }
+      .service-row .meta {
+        font-size: 11px;
+        color: var(--text-muted);
+        font-family: var(--font-display);
+      }
+      .service-row .stack-inline {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        justify-content: flex-end;
+        max-width: 140px;
+      }
+      .note {
+        margin-top: 24px;
+        padding: 16px;
+        border-radius: 8px;
+        border: 1px dashed var(--border-default);
+        font-size: 13px;
+        color: var(--text-muted);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-grid"></div>
+    <div class="bg-glow"></div>
+
+    <div class="mockup-shell">
+      <nav class="mockup-nav">
+        <div class="mockup-nav__left">
+          <span class="mockup-nav__badge">Opción A</span>
+          <a href="../index.html">← Galería</a>
+        </div>
+        <div class="mockup-nav__links">
+          <a class="is-active" href="option-a-terminal-manifest.html">A · Manifest</a>
+          <a href="option-b-bento-cinematic.html">B · Bento</a>
+          <a href="option-c-service-registry.html">C · Registry</a>
+          <a href="option-d-filmstrip.html">D · Filmstrip</a>
+        </div>
+      </nav>
+
+      <p class="section-kicker"><span>/</span> Portafolio</p>
+      <h1 class="section-title">Deployed Services</h1>
+      <p class="section-desc">
+        Un servicio flagship en primer plano + cola de despliegues. Coherente con el hero terminal.
+      </p>
+
+      <div class="manifest">
+        <article class="hero-panel">
+          <div class="hero-panel__bar">
+            <span class="dot dot--r"></span>
+            <span class="dot dot--y"></span>
+            <span class="dot dot--g"></span>
+            <span class="hero-panel__title">santiago@prod ~ systemctl status lendtrack</span>
+          </div>
+          <div class="hero-panel__body">
+            <div><span class="prompt">$</span> <span class="ok">● lendtrack.service</span> — active (running)</div>
+            <div class="dim">since Nov 2025 · Railway · Next.js 16 + Prisma + PostgreSQL</div>
+            <h3>LendTrack</h3>
+            <p>
+              Gestión de préstamos personales: clientes, cuotas, capital, PDF por correo y dashboard
+              en tiempo real con roles admin/user.
+            </p>
+            <div class="hero-stats">
+              <div><strong>99.9%</strong><span>uptime</span></div>
+              <div><strong>JWT</strong><span>auth</span></div>
+              <div><strong>PDF</strong><span>reports</span></div>
+            </div>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap">
+              <a class="btn btn--primary" href="#">Demo en vivo →</a>
+              <a class="btn" href="#">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <div class="service-list">
+          <div class="service-list__head">$ kubectl get deployments — namespace santim025</div>
+
+          <div class="service-row">
+            <span class="status status--live"></span>
+            <div>
+              <h4>Dinamo</h4>
+              <div class="meta">Fintech · dinamo-finanzas.vercel.app</div>
+            </div>
+            <div class="stack-inline">
+              <span class="chip">React</span>
+              <span class="chip">Node</span>
+            </div>
+          </div>
+
+          <div class="service-row">
+            <span class="status status--private"></span>
+            <div>
+              <h4>Engly <span class="badge badge--private">privado</span></h4>
+              <div class="meta">EdTech · offline-first · SQLite</div>
+            </div>
+            <div class="stack-inline">
+              <span class="chip">Expo</span>
+              <span class="chip">RN</span>
+            </div>
+          </div>
+
+          <div class="service-row">
+            <span class="status status--live"></span>
+            <div>
+              <h4>Asoafil</h4>
+              <div class="meta">Corporativo · asoafil.com</div>
+            </div>
+            <div class="stack-inline">
+              <span class="chip">Next</span>
+            </div>
+          </div>
+
+          <div class="service-row">
+            <span class="status status--private"></span>
+            <div>
+              <h4>Biblioteca <span class="badge badge--private">privado</span></h4>
+              <div class="meta">Full-stack · PDF + glosario</div>
+            </div>
+            <div class="stack-inline">
+              <span class="chip">Express</span>
+            </div>
+          </div>
+
+          <div class="service-row">
+            <span class="status status--live"></span>
+            <div>
+              <h4>AgroCostos</h4>
+              <div class="meta">Agro · proyecto-tia.vercel.app</div>
+            </div>
+            <div class="stack-inline">
+              <span class="chip">Recharts</span>
+            </div>
+          </div>
+
+          <div class="service-row">
+            <span class="status status--private"></span>
+            <div>
+              <h4>Heavy File Finder</h4>
+              <div class="meta">Desktop · Python + Flask</div>
+            </div>
+            <div class="stack-inline">
+              <span class="chip">Flask</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="note">
+        <strong>Por qué no es genérico:</strong> el layout cuenta una historia (un servicio en producción
+        + cola de deployments). El visitante backend entiende el status de un vistazo. Hover en filas
+        puede expandir descripción + links sin romper la densidad.
+      </p>
+    </div>
+  </body>
+</html>
