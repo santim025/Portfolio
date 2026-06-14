@@ -18,7 +18,7 @@ import {
   type Locale,
 } from "@/i18n";
 import { personalStatic, projectMeta, skills } from "@/data/static";
-import type { Project } from "@/data/content";
+import type { Project } from "@/data/static";
 
 interface LocaleContextValue {
   locale: Locale;

@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio — Santiago Cañon Morales
 
-## Getting Started
+Sitio personal de portfolio construido con Next.js 16, React 19 y Tailwind CSS 4. Presenta perfil profesional, stack, experiencia y proyectos con estética terminal y soporte bilingüe (EN/ES).
 
-First, run the development server:
+## Inicio rápido
+
+Requisitos: Node.js 20+ y npm.
 
 ```bash
+git clone https://github.com/santim025/Portfolio.git
+cd Portfolio
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000). El servidor usa Webpack (`next dev --webpack`) por compatibilidad estable en desarrollo.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Comando | Descripción |
+|---------|-------------|
+| `npm run dev` | Servidor de desarrollo en el puerto 3000 |
+| `npm run build` | Build de producción |
+| `npm run start` | Sirve el build generado |
+| `npm run lint` | ESLint |
 
-## Learn More
+## Características
 
-To learn more about Next.js, take a look at the following resources:
+- **App Router** con una sola página (`src/app/page.tsx`) compuesta por secciones modulares.
+- **i18n EN/ES** con selector en el header; idioma por defecto inglés, persistido en `localStorage` (`portfolio-locale`).
+- **Tema terminal**: System Info, System Log, Deployed Services, Tech Stack.
+- **Proyectos reales** enlazados a GitHub y demos en producción cuando aplica.
+- **Animaciones** con respeto a `prefers-reduced-motion`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Estructura del proyecto
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+src/
+├── app/              # layout, página principal, estilos globales
+├── components/       # UI por sección (Hero, ProjectsBento, etc.)
+├── context/          # LocaleProvider y hook useLocale()
+├── data/static.ts    # Datos no traducibles: proyectos, skills, contacto
+├── i18n/
+│   ├── locales/en.ts # Textos en inglés
+│   ├── locales/es.ts # Textos en español
+│   └── types.ts      # Tipos del diccionario i18n
+└── hooks/            # useCountUp, useReducedMotion
+```
 
-## Deploy on Vercel
+## Editar contenido
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Datos fijos (URLs, stack, repos)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Archivo: `src/data/static.ts`
+
+- `personalStatic` — nombre, email, GitHub, LinkedIn, username visible.
+- `projectMeta` — título, stack, `repoUrl`, `liveUrl`, `featured`, `isPrivate`.
+- `skills` — tecnologías del grid con clases Devicon.
+
+### Textos traducibles
+
+Archivos: `src/i18n/locales/en.ts` y `src/i18n/locales/es.ts`
+
+- Bio, experiencia laboral, descripciones de proyectos (`projectCopies`), stats del hero, labels de secciones.
+- Los proyectos se combinan en runtime: metadata de `static.ts` + copy de `projectCopies` por índice.
+
+### Metadatos SEO
+
+- Valores por defecto en `src/app/layout.tsx`.
+- El cliente actualiza `title`, `description` y `lang` al cambiar idioma (`LocaleContext`).
+
+## Despliegue
+
+Genera un build estático listo para cualquier hosting compatible con Next.js:
+
+```bash
+npm run build
+npm run start
+```
+
+También puedes desplegar en Vercel, Railway u otro proveedor que soporte Next.js 16.
+
+## Stack
+
+- [Next.js 16](https://nextjs.org/) · [React 19](https://react.dev/) · [Tailwind CSS 4](https://tailwindcss.com/)
+- [Devicons](https://devicon.dev/) (CDN) para iconos de tecnologías
+- Fuentes: Inter, JetBrains Mono (`next/font`)
+
+## Licencia
+
+Proyecto privado/personal. Consultar al autor antes de reutilizar el diseño o el contenido.

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useLocale } from "@/context/LocaleContext";
 import type { Dictionary } from "@/i18n";
-import type { Project } from "@/data/content";
+import type { Project } from "@/data/static";
 
 function slugify(title: string): string {
   return title.toLowerCase().replace(/[^a-z0-9]+/g, "");

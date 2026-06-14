@@ -24,6 +24,11 @@ export interface ProjectMeta {
   highlights?: { value: string; label: string }[];
 }
 
+export type Project = ProjectMeta & {
+  tag: string;
+  description: string;
+};
+
 export const projectMeta: ProjectMeta[] = [
   {
     title: "Engly",
@@ -38,7 +43,7 @@ export const projectMeta: ProjectMeta[] = [
     stack: ["React", "Node.js", "PostgreSQL", "Docker", "Vite"],
     isPrivate: true,
     repoUrl: "https://github.com/santim025/Dinamo",
-    liveUrl: "https://dinamo-frontend-production.up.railway.app/login",
+    liveUrl: "https://dinamo.up.railway.app/login",
   },
   {
     title: "LendTrack",
@@ -46,7 +51,7 @@ export const projectMeta: ProjectMeta[] = [
     stack: ["Next.js", "PostgreSQL", "Prisma", "Docker", "Railway"],
     featured: true,
     repoUrl: "https://github.com/santim025/LendTrack",
-    liveUrl: "https://prestador-app-production.up.railway.app/auth/login",
+    liveUrl: "https://lendtrack.up.railway.app/auth/login",
     highlights: [
       { value: "JWT", label: "auth" },
       { value: "PDF", label: "reports" },
