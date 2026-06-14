@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" fill="none" role="img" aria-label="SC">
+  <rect width="180" height="180" rx="40" fill="#0f1419"/>
+  <rect x="6" y="6" width="168" height="168" rx="34" stroke="#14b8ae" stroke-width="4" opacity="0.55"/>
+  <circle cx="146" cy="34" r="12" fill="#14b8ae" opacity="0.9"/>
+  <text
+    x="90"
+    y="118"
+    text-anchor="middle"
+    font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace"
+    font-size="64"
+    font-weight="700"
+    letter-spacing="-0.04em"
+    fill="#2dd4bf"
+  >SC</text>
+</svg>
